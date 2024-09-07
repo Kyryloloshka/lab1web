@@ -1,0 +1,69 @@
+[data-fp-section] {
+	flex: 1 0 100%;
+	position: relative; 
+}
+
+.page__section {
+	position: relative;
+	min-height: 100%;
+}
+
+.page__wrapper {
+	height: 100%;
+}
+
+.page {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+}
+
+.page__pagination {
+	@media (max-width: $pc) {
+		display: none;
+	}
+	position: absolute;
+	top: 50%;
+	right: 2.5%;
+	transform: translate(0px, -50%);
+	display: flex;
+	flex-direction: column;
+}
+
+.page__bullet {
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+	background-color: #999;
+	margin: 10px 0;
+	border-radius: 50%;
+	transition: background-color 0.3s ease 0s;
+}
+
+.page__bullet_active {
+	background-color: #444;
+}
+
+.page__scroll {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 5px;
+	border-radius: 2px;
+	transform: translate(-5px, 0px);
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.page__drag-scroll {
+	border-radius: 2px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	cursor: pointer;
+}

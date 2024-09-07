@@ -1,0 +1,10 @@
+.button {
+	display: inline-block;
+	text-align: center;
+	transition: box-shadow 0.3s ease 0s;
+	cursor: pointer;
+	@media (any-hover: hover) {
+		&:hover {
+		}
+	}
+}

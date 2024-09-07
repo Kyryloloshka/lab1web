@@ -1,0 +1,75 @@
+.page {
+	&__action {
+		height: rem(30);
+		width: rem(25);
+		position: relative;
+	}
+
+	&__theme {
+		width: 100%;
+		height: 100%;
+	}
+
+	&__reset {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	&__reset.active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&__reset::before {
+		content: 'x';
+		position: absolute;
+		right: -3px;
+		top: 0;
+		cursor: pointer;
+		width: rem(10);
+		height: rem(10);
+		font-size: rem(7);
+		border-radius: 50%;
+		line-height: rem(10);
+		color: #fff;
+		text-align: center;
+		background-color: #666;
+	}
+}
+
+body {
+	transition: all 0.3s ease 0s;
+	background-color: #fff;
+	color: #333;
+}
+
+// Для встановлення теми системи користувача
+//! Цей функціонал вже є в javaScript
+// @media (prefers-color-scheme: dark) {
+// 	body {
+// 		color: #fff;
+// 		background-color: #333;
+// 	}
+// }
+
+//? стилі для темної теми
+html.dark body {
+	color: #fff;
+	background-color: #333;
+}
+
+//? стилі для світлої теми
+html.light body {
+	color: #333;
+	background-color: #fff;
+}
+
+// icon сонечка
+html.dark .page__theme {
+	background: url('../img/icons/sun.svg') center / 100% no-repeat;
+}
+
+// icon місяця
+html.light .page__theme {
+	background: url('../img/icons/moon.svg') center / 100% no-repeat;
+}

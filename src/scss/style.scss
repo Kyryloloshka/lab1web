@@ -1,0 +1,144 @@
+@use 'sass:math';
+
+// Якщо я підключення шрифтів
+// @import 'fonts';
+// @import 'fonticons.scss'; // icons font
+
+// підключення шрифтів ====================================================================================================================================
+// &display=swap для шрифтів
+
+
+// шрифт за замовчанням ====================================================================================================================================
+$fontFamily: "Arial, 'Helvetica Neue', Helvetica, sans-serif";
+$fontSize: 16px;
+
+// основні кольори ====================================================================================================================================
+$mainColor: #000;
+
+
+// Мінімальна ширина сторінки
+$minWidth: 320;
+// Ширина полотна (макету)
+$maxWidth: 1920;
+// Ширина обмежувального контейнера (0 = нема обмежень)
+$maxWidthContainer: 0;
+// Загальній відступ контейнера
+// (30 = 15px зліва та справа, 0 = нема відступу)
+$containerPadding: 30;
+
+// Тип адаптиву:
+// 1 = чуйність (у контейнера нема брейкпоінтів)
+// 2 = по брейк-поінтам (контейнер міняє смою ширину по брейк-поінтам
+$responsiveType: 1;
+
+// Ширина спрацьовування першого брейк-поінта
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// стилі онулення
+@import "nullstyle.scss";
+
+// Брейк-поінти
+$pc: em($containerWidth);// ПК, ноутбуки, декотрі планшети в горизонтальному положенні
+$tablet: em(991.98);// Планшети, декотрі телефони в горизонтальному положенні
+$mobile: em(767.98);// Телефони L
+$mobileSmall: em(479.98); // Телефони S
+
+
+
+body {
+	.lock & {
+		overflow: hidden;
+		touch-action: none;
+		overscroll-behavior: none;
+	}
+	
+}
+
+html {
+	font-family: $fontFamily;
+	font-size: $fontSize;
+}
+
+body, 
+html {
+	width: 100%;
+}
+
+.wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	// Прикріплюємо footer до низу
+	main {
+		flex: 1 1 auto;
+	}
+	// фікс слайдерів
+	> * {
+		min-width: 0;
+	}
+}
+
+
+/*
+	Стилі будуть примінятися до усіх
+	класам які мають зміст "__container"
+	Наприклад header__container, main__container і т.д.
+	Сніпет (HTML): cnt
+*/
+@if ($responsiveType==1) {
+	// Чуйна
+	[class*="__container"] {
+		@if ($maxWidthContainer>0) {
+			max-width: math.div($maxWidthContainer, 14)+rem;
+			box-sizing: content-box;
+			margin: 0 auto;
+		}
+		@if ($containerPadding>0) {
+			padding: 0 rem(math.div($containerPadding, 2))
+		}
+	}
+} @else {
+	// По брейк-поінтам
+	[class*="__container"] {
+		margin: 0 auto;
+		@if ($maxWidthContainer>0) {
+			max-width: math.div($maxWidthContainer, 14)+rem;
+			box-sizing: content-box;
+		} @else {
+			@if ($containerPadding>0) {
+				padding: 0 rem(math.div($containerPadding, 2));
+			}
+		}
+		@media (max-width: $pc) {
+			max-width: rem(970);
+		}
+		@media (max-width: $tablet) {
+			max-width: rem(750);
+		}
+		@media (max-width: $mobile) {
+			max-width: none;
+			@if ($containerPadding>0 and $maxWidthContainer>0) {
+				padding: 0 rem(math.div($containerPadding, 2));
+			}
+		}
+	}
+}
+@import 'common.scss'; //? Загальні стилі для БЕМ-блоків
+@import 'button.scss'; //? Кнопочка
+@import 'home.scss'; //? home
+@import 'header.scss'; //? header
+@import 'footer.scss'; //? footer
+// @import 'libraryes/rating.scss'; //? rating
+// @import '../../node_modules/swiper/swiper-bundle.css'; //? import Swiper styles
+// @import 'libraryes/choices.scss';
+// @import 'libraryes/range.scss'; //? import custom select
+// @import 'libraryes/checkbox.scss';
+// @import 'libraryes/fullscroll.scss';
+// @import 'libraryes/popup.scss'; //? popup
+// @import 'libraryes/lazy-loading.scss'; //? lazy-loading
+// @import 'libraryes/change_theme.scss'; //? change_theme
+// @import 'libraryes/spollers.scss'; //? spollers
+
+.page {
+}

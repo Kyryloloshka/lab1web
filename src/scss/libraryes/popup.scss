@@ -1,0 +1,77 @@
+
+
+.popup {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	color: #fff;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.8s ease 0s; //? якщо міняти delay, треба змінити timeout в js файлі popup.js
+	overflow-y: auto;
+	overflow-x: hidden;
+	&.open {
+		opacity: 1;
+		visibility: visible;
+		.popup__content {
+			// transform: perspective(600px)  rotateX(0deg) translate(0px, 0px);
+			opacity: 1;
+		}
+	}
+	&__area {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	&__body {
+		min-height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: rem(30) rem(10);
+	}
+
+	&__content {
+		background-color: #fff;
+		color: #000;
+		max-width: rem(800);
+		padding: rem(30);
+		position: relative;
+		border-radius: rem(10);
+		transition: all 0.8s ease 0s; //? якщо міняти delay, треба змінити timeout в js файлі popup.js
+		opacity: 0;
+		// transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+		&_image {
+			padding: 0px;
+		}
+	}
+
+	&__close {
+		position: absolute;
+		top: rem(10);
+		right: rem(20);
+		font-size: rem(20);
+	}
+
+	&__title {
+		font-size: rem(40);
+		margin: 0 0 1em 0;
+	}
+
+	&__text {}
+
+	&__image {
+		max-width: rem(400);
+		img {
+			width: 100%;
+			vertical-align: top;
+		}
+	}
+}
