@@ -16,9 +16,11 @@
   }
   &__list {
     display: flex;
-    @include adaptiveValue(gap, 40, 10);
-  }
-  &__item {
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    @include adaptiveValue(column-gap, 40, 10);
   }
   &__link {
     text-transform: uppercase;

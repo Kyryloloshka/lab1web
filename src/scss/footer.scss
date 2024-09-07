@@ -4,13 +4,13 @@
   &__container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 10px;
   }
   &__logo {
     min-width: 100px;
     display: flex;
     padding: 5px;
     background: white;
-  }
-  &__paragraph {
   }
 }

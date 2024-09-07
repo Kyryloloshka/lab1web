@@ -9,12 +9,17 @@
       <main class="page page__home home">
         <div class="home__main-container">
           <div class="home__content">
-            <aside class="home__content-aside"></aside>
-            <div class="home__main-content">3</div>
+            @@include('html/other_files/_nav-aside.html', {})
+            <div class="home__main-content">
+              <p>
+                Тут ви знайдете все необхідне для успішного навчання: відео
+                лекції, статті, інтерактивні завдання та багато іншого.
+              </p>
+            </div>
           </div>
-          <div class="home__footer">5</div>
+          @@include('html/other_files/_info-content-footer.html', {})
         </div>
-        <aside class="home__aside"></aside>
+        @@include('html/other_files/_main-aside.html', {})
       </main>
       @@include('html/_footer.html', {})
     </div>

@@ -1,10 +1,18 @@
 .button {
-	display: inline-block;
-	text-align: center;
-	transition: box-shadow 0.3s ease 0s;
-	cursor: pointer;
-	@media (any-hover: hover) {
-		&:hover {
-		}
-	}
+  display: inline-block;
+  text-align: center;
+  transition: box-shadow 0.3s ease 0s;
+  cursor: pointer;
+  padding: 5px 20px;
+  border: 2px solid #6f52ff;
+  background: transparent;
+  color: #3214c7;
+  border-radius: 5px;
+  transition: all 0.3s ease 0s;
+  @media (any-hover: hover) {
+    &:hover {
+      background: #6f52ff;
+      color: white;
+    }
+  }
 }

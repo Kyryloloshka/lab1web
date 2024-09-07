@@ -6,19 +6,34 @@
     <div class="wrapper">
       @@include('html/_header.html', {})
 
-      <main class="page page__home"></main>
+      <main class="page page__home home">
+        <div class="home__main-container">
+          <div class="home__content">
+            @@include('html/other_files/_nav-aside.html', {})
+            <div class="home__main-content image-content">
+              <img
+                class="image-content__img"
+                src="img/kitsyk.jpg"
+                alt="Котик"
+              />
+            </div>
+          </div>
+          @@include('html/other_files/_info-content-footer.html', {})
+        </div>
+        @@include('html/other_files/_main-aside.html', {})
+      </main>
       @@include('html/_footer.html', {})
     </div>
     <!-- <div id="popup" class="popup">
-		<div class="popup__body">
-			<div class="popup__content">
-				<a href="#header" class="popup__close close-popup">X</a>
-				<div class="popup__title">Це модальне вікно №1</div>
-				<div class="popup__text">
+			<div class="popup__body">
+				<div class="popup__content">
+					<a href="#header" class="popup__close close-popup">X</a>
+					<div class="popup__title">Це модальне вікно №1</div>
+					<div class="popup__text">
+					</div>
 				</div>
 			</div>
-		</div>
-	</div> -->
+		</div> -->
     <script src="js/app.min.js"></script>
   </body>
 </html>
