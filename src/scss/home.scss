@@ -1,0 +1,39 @@
+.home {
+  display: flex;
+  &__main-container {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
+  &__content {
+    display: flex;
+    flex: 1 1 auto;
+  }
+  &__content-aside {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 15px;
+    min-width: calc(10% + 100px);
+    background: #ffd7ae;
+  }
+  &__main-content {
+    padding: 15px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex: 1 1 auto;
+  }
+  &__footer {
+    padding: 15px;
+    background: #daf3d6;
+  }
+  &__aside {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 15px;
+    background: #ffd7ae;
+    min-width: calc(10% + 100px);
+  }
+}

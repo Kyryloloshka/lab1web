@@ -1,0 +1,16 @@
+.footer {
+  background: #a8c4ff;
+  padding: 20px 0;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__logo {
+    min-width: 100px;
+    display: flex;
+    padding: 5px;
+    background: white;
+  }
+  &__paragraph {
+  }
+}

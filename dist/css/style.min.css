@@ -1,0 +1,260 @@
+@charset "UTF-8";
+/*Онулення*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+.lock body {
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: none;
+}
+
+html {
+  font-family: "Arial, 'Helvetica Neue', Helvetica, sans-serif";
+  font-size: 16px;
+}
+
+body,
+html {
+  width: 100%;
+}
+
+.wrapper {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.wrapper main {
+  flex: 1 1 auto;
+}
+.wrapper > * {
+  min-width: 0;
+}
+
+/*
+	Стилі будуть примінятися до усіх
+	класам які мають зміст "__container"
+	Наприклад header__container, main__container і т.д.
+	Сніпет (HTML): cnt
+*/
+[class*=__container] {
+  padding: 0 1.0714285714rem;
+}
+
+.button {
+  display: inline-block;
+  text-align: center;
+  transition: box-shadow 0.3s ease 0s;
+  cursor: pointer;
+}
+.home {
+  display: flex;
+}
+.home__main-container {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+.home__content {
+  display: flex;
+  flex: 1 1 auto;
+}
+.home__content-aside {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 15px;
+  min-width: calc(10% + 100px);
+  background: #ffd7ae;
+}
+.home__main-content {
+  padding: 15px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex: 1 1 auto;
+}
+.home__footer {
+  padding: 15px;
+  background: #daf3d6;
+}
+.home__aside {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 15px;
+  background: #ffd7ae;
+  min-width: calc(10% + 100px);
+}
+
+.header {
+  background: #a8c4ff;
+  padding: 20px 0;
+}
+.header__container {
+  align-items: center;
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+.header__logo {
+  min-width: 100px;
+  display: flex;
+  justify-content: end;
+  padding: 5px;
+  background: white;
+}
+.header__list {
+  display: flex;
+  gap: 40px;
+}
+@media (max-width: 30px) {
+  .header__list {
+    gap: calc(10px + 30 * (100vw - 320px) / -290);
+  }
+}
+.header__link {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #47444e;
+}
+
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		height: 22.5px;
+		width: 37.5px;
+		cursor: pointer;
+		z-index: 10;
+
+		span,
+		&::before,
+		&::after {
+			content: '';
+			transition: all 0.3s ease 0s;
+			left: 0;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #000;
+		}
+
+		&::before {
+			top: 0px;
+		}
+
+		&::after {
+			bottom: 0px;
+		}
+
+		span {
+			top: calc(50% - 1px);
+		}
+
+		&.menu-open {
+			span {
+				transform: scale(0);
+			}
+
+			&::before {
+				transform: rotate(-45deg);
+				top: calc(50% - 1px);
+			}
+
+			&::after {
+				transform: rotate(45deg);
+				bottom: calc(50% - 1px);
+			}
+		}
+	}
+}
+*/
+.footer {
+  background: #a8c4ff;
+  padding: 20px 0;
+}
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__logo {
+  min-width: 100px;
+  display: flex;
+  padding: 5px;
+  background: white;
+}

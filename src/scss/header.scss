@@ -1,6 +1,31 @@
-
-
-
+.header {
+  background: #a8c4ff;
+  padding: 20px 0;
+  &__container {
+    align-items: center;
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+  }
+  &__logo {
+    min-width: 100px;
+    display: flex;
+    justify-content: end;
+    padding: 5px;
+    background: white;
+  }
+  &__list {
+    display: flex;
+    @include adaptiveValue(gap, 40, 10);
+  }
+  &__item {
+  }
+  &__link {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #47444e;
+  }
+}
 
 //======================================================================================================================================
 // Burger
